@@ -1,6 +1,6 @@
 # twitterTimeline
 
-**Generated from HotTowel Angular**
+**Generated from HotTowel Angular **
 
 >*Opinionated Angular style guide for teams by [@john_papa](//twitter.com/john_papa)*
 

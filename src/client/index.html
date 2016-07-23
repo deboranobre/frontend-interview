@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html ng-app="twitterTimelineApp">
+
+<head>
+  <style>
+    /* This helps the ng-show/ng-hide animations start at the right place. */
+    /* Since Angular has this but needs to load, this gives us the class early. */
+    
+    .ng-hide {
+      display: none!important;
+    }
+  </style>
+  <title ng-bind="title">
+    twitterTimeline
+  </title>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+  <base href="/">
+
+  <!-- build:css styles/lib.css -->
+  <!-- bower:css -->
+  <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css" />
+  <link rel="stylesheet" href="/bower_components/font-awesome/css/font-awesome.css" />
+  <link rel="stylesheet" href="/bower_components/toastr/toastr.css" />
+  <!-- endbower -->
+  <!-- endbuild -->
+
+  <!-- build:css styles/app.css -->
+  <!-- inject:css -->
+  <link rel="stylesheet" href="/.tmp/styles.css">
+  <!-- endinject -->
+  <!-- endbuild -->
+</head>
+
+<body class="ng-cloak">
+	<div ng-controller="twitterTimelineController">
+		<div class="profileHearder">
+			<div class="profileHearderCover">
+				<div class="profileHearderCoverBg">
+					<img ng-src="{{user.profile_banner_url}}" />
+				</div>
+				
+				<div class="timelineContainer">
+					<div class="profileAvatar">
+						<img ng-src="{{user.profile_image_url}}"/>							
+					</div>
+				</div>
+			</div>
+			
+			<div class="profileHearderNavBar">
+				<div class="timelineContainer">
+					<div class="row-no-padding">
+						
+						<div class="col-sm-3">
+						</div>
+						<div class="col-sm-9">
+							<ul style="padding:0;">
+								<li class="profileNavItem" style="border-bottom: 4px solid #A8A1A2 ;">TWEETS <span>{{user.statuses_count}} </span></li>
+								<li class="profileNavItem">FOLLOWING <span>{{user.friends_count}} </span></li>
+								<li class="profileNavItem">FOLLOWERS <span>{{user.followers_count}} </span></li>
+								<li class="profileNavItem">LIKES <span>{{user.favourites_count}} </span></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="timelineContainer">
+			<div class="row-no-padding">
+				<div class="col-sm-3">
+					<div class="userInfo">
+						<h1>{{user.name}}</h1>
+						<h2 class="badges">@{{user.name}}</h2>
+						<p>{{user.description}}</p>
+						<div>
+							<i class="fa fa-map-marker fa-lg icon" aria-hidden="true"></i> {{user.location}}
+						</div>
+						<div>
+							<a href="{{user.url}}"><i class="fa fa-link fa-lg icon" aria-hidden="true"></i> {{user.url}}</a>
+						</div>
+						<div>
+							<i class="fa fa fa-calendar fa-lg icon" aria-hidden="true"></i> 
+							{{user.created_at}} 
+						</div>
+						
+					</div>
+				</div>
+			
+				<div class="col-sm-6">
+					<ul class="listTweets">
+						<li ng-repeat="tweet in tweets">
+							<img ng-src="{{tweet.user.profile_image_url}}"/>					
+							<span>{{tweet.user.name}}</span> <a href="">@{{tweet.user.name}}</a>
+							<p class="tweetSpace">{{tweet.text}}</p>
+						</li>
+					</ul>
+				</div>
+				
+				<div class="col-sm-3">
+					<div class="box">
+						<ul class="listTrends">
+							<li ng-repeat="trend in trends">
+								{{trend.name}}
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		
+	</div>
+
+  <!-- build:js js/lib.js -->
+  <!-- bower:js -->
+  <script src="/bower_components/jquery/dist/jquery.js"></script>
+  <script src="/bower_components/angular/angular.js"></script>
+  <script src="/bower_components/angular-sanitize/angular-sanitize.js"></script>
+  <script src="/bower_components/bootstrap/dist/js/bootstrap.js"></script>
+  <script src="/bower_components/extras.angular.plus/ngplus-overlay.js"></script>
+  <script src="/bower_components/moment/moment.js"></script>
+  <script src="/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+  <script src="/bower_components/toastr/toastr.js"></script>
+  <script src="/bower_components/angular-animate/angular-animate.js"></script>
+  <script src="/bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+  <!-- endbower -->
+  <!-- endbuild -->
+
+  <!-- build:js js/app.js -->
+  <!-- inject:js -->
+  <script src="/src/client/app/app.js"></script>
+  <script src="/src/client/app/twitter.js"></script>
+  <!-- endinject -->
+
+  <!-- inject:templates:js -->
+  <!-- endinject -->
+  <!-- endbuild -->
+</body>
+
+</html>

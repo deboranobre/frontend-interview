@@ -1,0 +1,205 @@
+@color_grey: #66757f;
+@color_light_grey: #e1e8ed;
+@color_link: #8899a6;
+
+* {
+    /*-webkit-box-shadow: none !important;
+    -ms-box-shadow: none !important;
+    box-shadow: none !important;
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled = false) !important;
+    -webkit-text-shadow: none !important;
+    -ms-text-shadow: none !important;
+    text-shadow: none !important;*/
+    font-family: Arial,sans-serif;
+    -webkit-font-smoothing: antialiased;
+    /*font-weight: 400;*/
+}
+
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+
+body{background-color: #f5f8fa;}
+
+.icon{color: @color_link;}
+
+ul{list-style: none;}
+
+.row-no-padding {
+  [class*="col-"] {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+}
+
+.profileHearder .profileHearderCover 
+{
+    position: relative;
+    width: 100%;
+    z-index: 4;
+}
+
+.profileHearder .profileHearderCoverBg
+{
+	position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+}
+
+.profileHearder .profileHearderCoverBg img 
+{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -9999px;
+    bottom: -9999px;
+    margin: auto 0;
+    width: 100%;
+}
+
+.timelineContainer
+{
+	height: 100%;
+	margin: 0 auto;
+    position: relative;
+}
+
+.profileHearder .profileAvatar
+{
+	background: #fff;
+    border: 5px solid #fff;
+    border-radius: 12px;
+    box-shadow: 0 1px 1px rgba(136,153,166,0.15);
+    height: 200px;
+    position: relative;
+    width: 200px;
+	bottom: -87px;
+    position: absolute;
+    transition: bottom .3s;
+    z-index: 3;
+}
+
+.profileHearder .profileAvatar img{
+	border-radius: 8px;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+.profileHearder .profileHearderNavBar
+{
+	background-color: #fff;
+    border-bottom: 1px solid @color_light_grey;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    height: 60px;
+}
+
+.profileHearder .profileHearderNavBar .profileNavItem
+{
+	display: inline-block;
+	border-color: @color_grey;
+    color: @color_grey;
+    cursor: default;
+    font-size: 11px;
+    letter-spacing: .02em;
+    text-transform: uppercase;
+    transition: color .15s ease-in-out;
+	height: 59px; 
+	padding: 10px 10px 0 10px;
+}
+
+.profileHearder .profileHearderNavBar .profileNavItem span
+{
+	display: block;
+	text-align: center;
+	font-size: 18px;
+    font-weight: 500;
+    transition: color .15s ease-in-out;
+}
+
+.userInfo {padding-right: 0 25px;} 
+
+.userInfo h1
+{
+	font-size: 22px;
+    font-weight: 700;
+    line-height: 1;
+    word-wrap: break-word;
+	padding-top: 10px;
+}
+
+.userInfo .badges {font-size: 18px;}
+
+.userInfo h2{color: @color_link;}
+.userInfo h2:hover {cursor: pointer; text-decoration: underline;}
+.userInfo div {margin: 10px 0;}
+
+ul.listTweets img{border-radius: 5px; float: left;}
+ul.listTweets li{padding: 10px; border-bottom: 1px solid @color_light_grey;}
+ul.listTweets span{padding-left: 14px; }
+ul.listTweets
+{
+	background-color: #fff;
+	border: 1px solid @color_light_grey;
+	border-radius: 5px 5px 0 0;
+	margin-bottom: -1px;
+	padding: 0;
+}
+
+ul.listTweets p
+{
+	padding-left: 60px;
+    font-size: 26px;
+    line-height: 32px;
+    font-weight: 300;
+    letter-spacing: .01em;
+}
+
+.box
+{
+	background-color: #fff;
+    border: 1px solid @color_light_grey;
+    border-radius: 5px;
+    font-size: 12px;
+    padding: 15px;
+	margin-left:10px;
+}
+
+@media screen and (min-width: 1100px) {
+    .profileHearderCover{height: 300px;}
+}
+
+@media screen and (min-width: 1200px) {
+    .profileHearderCover{height: 320px;}
+}
+
+@media screen and (min-width: 1236px) {
+    .timelineContainer{max-width: 1190px;}
+}
+
+@media screen and (min-width: 1370px) {
+    .profileHearderCover{height: 360px;}
+}
+
+@media screen and (min-width: 1450px) {
+    .profileHearderCover{height: 380px;}
+}
+
+@media screen and (min-width: 1510px) {
+    .profileHearderCover{height: 420px;}
+}
+
+@media screen and (min-width: 1670px) {
+    .profileHearderCover{height: 460px;}
+}
+
+@media screen and (min-width: 1820px) {
+    .profileHearderCover{height: 500px;}
+}
